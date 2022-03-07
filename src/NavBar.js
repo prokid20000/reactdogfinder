@@ -11,7 +11,7 @@ function NavBar({ dogs }) {
     return (
         <nav className="NavBar">
             <NavLink exact to="/dogs">
-                Home
+                DogList
             </NavLink>
             {links}
         </nav>

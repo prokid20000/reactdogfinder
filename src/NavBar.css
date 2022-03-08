@@ -1,4 +1,7 @@
 .NavBar {
-    display: inline-block;
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+    margin-bottom: 20px;
 }
 

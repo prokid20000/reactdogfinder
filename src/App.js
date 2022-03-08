@@ -6,12 +6,27 @@ import axios from 'axios';
 import Routes from "./Routes";
 
 
-
+/** Show the Nav bar and the dog lists
+ * 
+ * prop: none
+ * state:
+ *  - dogs: an array of object, the object looks like =>
+ *                    {
+                          "name": "Perry",
+                          "age": 4,
+                          "src": "perry",
+                          "facts": [
+                            "Perry loves all humans.",
+                            "Perry demolishes all snacks.",
+                            "Perry hates the rain."
+                          ]
+                      }
+    - isLoading: true/false, controlling making axios request
+ * App -> (NavBar, Routes)
+ */
 function App() {
   const [dogs, setDogs] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
-  //if condition to control making request
 
   async function getDogs() {
     const response = await axios.get("http://localhost:5000/dogs");
@@ -20,10 +35,13 @@ function App() {
     setIsLoading(false);
   }
 
-  if (isLoading){
+  console.log("*******************");
+
+  if (isLoading) {
     getDogs();
+    return <h1>Loading...</h1>;
   }
-  
+
 
   return (
     <div>

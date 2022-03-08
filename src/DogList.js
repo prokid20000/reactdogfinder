@@ -6,8 +6,8 @@ function DogList({ dogs }) {
         <div>
             {dogs.map(dog => (
                 <div key={dog.name}>
-                    <img src={dog.src} alt={dog.name} />
-                    <Link to={`/dogs/${dog}`}>{dog.name}</Link>
+                    <img src ={`/${dog.src}.jpg`} alt = {dog.name} style={{height: "100px", width: "100px",}}/>
+                    <Link to={`/dogs/${dog.name}`}>{dog.name}</Link>
                 </div>
             ))}
         </div>

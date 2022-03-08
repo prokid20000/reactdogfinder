@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-
+import "./NavBar.css";
 
 function NavBar({ dogs }) {
     const links = dogs.map(dog => (

@@ -1,8 +1,7 @@
 import './App.css';
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import NavBar from './Navbar';
+import { BrowserRouter } from "react-router-dom";
+import NavBar from './NavBar';
 import { useState } from 'react';
-import { v4 as uuid } from "uuid";
 import axios from 'axios';
 import Routes from "./Routes";
 
@@ -16,8 +15,13 @@ function App() {
 
   async function getDogs() {
     const response = await axios.get("http://localhost:5000/dogs");
+    console.log(response.data);
     setDogs(response.data);
     setIsLoading(false);
+  }
+
+  if (isLoading){
+    getDogs();
   }
   
 
